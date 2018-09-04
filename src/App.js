@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Profile from './Profile';
 
 class App extends Component {
+  state = {
+    profiles : [
+      { name: 'Lucien', age: 30, rank: 'Principal', id: 1 },
+      { name: 'Kyle', age: 28, rank: 'Soloist', id: 2 },
+      { name: 'Leta', age: 24, rank: 'Soloist', id: 3 },
+    ]
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>PNB Ballet Artists</h1>
+        <Profile profiles = {this.state.profiles}/>
       </div>
     );
   }
