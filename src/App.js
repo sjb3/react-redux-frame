@@ -20,11 +20,23 @@ class App extends Component {
       profiles: profiles
     })
   }
+  deleteProfile = (id) => {
+    // filter certian item(id)
+    let profiles = this.state.profiles.filter(profile => {
+      return profile.id !== id
+    })
+    this.setState({
+      profiles
+    })
+  }
+  componentDidMount() {
+    console.log('component mounted')
+  }
   render() {
     return (
       <div className="App">
         <h1>PNB Ballet Artists</h1>
-        <Profile profiles = {this.state.profiles}/>
+        <Profile deleteProfile={this.deleteProfile} profiles = {this.state.profiles}/>
         <AddProfile addProfile={this.addProfile}/>
       </div>
     );
