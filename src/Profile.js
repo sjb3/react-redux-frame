@@ -32,7 +32,7 @@ import React from 'react'
 // export default (props) => {
 //   const {profiles} = props;
 // aldo destructure above statement like this
-export default({profiles}) => {
+export default({profiles, deleteProfile}) => {
 
   const profileList = profiles.map(profile => {
     return profile.age > 20 ?
@@ -40,6 +40,7 @@ export default({profiles}) => {
         <h2>Name: {profile.name}</h2>
         <h2>Age: {profile.age}</h2>
         <h2>Rank: {profile.rank}</h2>
+        <button onClick={() => {deleteProfile(profile.id)}}>Remove</button>
       </div>
       :
       null
