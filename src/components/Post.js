@@ -40,4 +40,5 @@ const mapStateToProps = (state, ownProps) => {
     post: state.posts.find(post => post.id === id)
   }
 }
+
 export default connect(mapStateToProps)(Post)
