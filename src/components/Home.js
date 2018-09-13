@@ -48,8 +48,10 @@ class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.posts
+    posts: [...state.posts]
   }
 }
 
 export default connect(mapStateToProps)(Home)
+// connect store to component
+// export default connect(state => state.posts)(Home);
